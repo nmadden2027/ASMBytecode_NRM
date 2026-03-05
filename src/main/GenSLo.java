@@ -24,26 +24,20 @@ public class GenSLo {
         mv.visitCode();
         mv.visitLdcInsn(1000000000L);
         mv.visitVarInsn(LSTORE, 1);
-        
         mv.visitLdcInsn(250000000L);
         mv.visitVarInsn(LSTORE, 3);
-        
         mv.visitVarInsn(LLOAD, 1);
         mv.visitVarInsn(LLOAD, 3);
         mv.visitInsn(LSUB);
-        
         mv.visitVarInsn(LSTORE, 5);
         mv.visitLdcInsn(9.99);
-        
         mv.visitVarInsn(DSTORE, 7);
         mv.visitLdcInsn(4.55);
-        
         mv.visitVarInsn(DSTORE, 9);
         mv.visitVarInsn(DLOAD, 7);
         mv.visitVarInsn(DLOAD, 9);
         mv.visitInsn(DSUB);
         mv.visitVarInsn(DSTORE, 11);
-        
         mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
         mv.visitVarInsn(LLOAD, 5);
         mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(J)V", false);
